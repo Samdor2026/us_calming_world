@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Us Calming the World — Mindful Buddhist Companion</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond & Lora for serene literary elegance, Plus Jakarta Sans for clean UI -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        serif: ['Lora', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'espresso-deep': '#261f19',
+                        'beige-dark': '#342b23',
+                        'beige-card': '#42362c',
+                        'beige-elevated': '#524337',
+                        'sand-border': '#6e5b4b',
+                        'amber-gold': '#d9a05b',
+                        'amber-soft': '#e8be84',
+                        'cream-text': '#f4ede4',
+                        'cream-muted': '#d5c8b8',
+                        'terracotta-muted': '#9e6249',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+                        'spin-slow': 'spin 90s linear infinite',
+                        'flicker': 'flameFlicker 3.5s ease-in-out infinite',
+                        'float-gentle': 'floatGentle 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: 0, transform: 'translateY(12px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        },
+                        flameFlicker: {
+                            '0%, 100%': { transform: 'scale(1) rotate(-1deg)', opacity: 0.92 },
+                            '33%': { transform: 'scale(1.06, 0.96) rotate(1.5deg)', opacity: 1 },
+                            '66%': { transform: 'scale(0.96, 1.04) rotate(-0.5deg)', opacity: 0.88 },
+                        },
+                        floatGentle: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --sky-top: #2c231c;
+            --sky-mid: #473729;
+            --sky-horizon: #8a6440;
+            --sun-core: #f5cf93;
+            --sun-halo: rgba(217, 160, 91, 0.28);
+            --mountain-far: #3d3025;
+            --mountain-near: #2b2119;
+            --water-tint: rgba(217, 160, 91, 0.14);
+        }
+
+        /* Mood-responsive atmospheric themes */
+        body.mood-warmth {
+            --sky-top: #30221a;
+            --sky-mid: #593927;
+            --sky-horizon: #a86b43;
+            --sun-core: #ffd699;
+            --sun-halo: rgba(235, 152, 94, 0.34);
+            --mountain-far: #4a3123;
+            --mountain-near: #2e1e15;
+            --water-tint: rgba(235, 152, 94, 0.18);
+        }
+
+        body.mood-twilight {
+            --sky-top: #221f24;
+            --sky-mid: #383136;
+            --sky-horizon: #6b5852;
+            --sun-core: #e6cbb8;
+            --sun-halo: rgba(196, 169, 155, 0.22);
+            --mountain-far: #30292d;
+            --mountain-near: #1f1a1d;
+            --water-tint: rgba(196, 169, 155, 0.12);
+        }
+
+        body.mood-sage {
+            --sky-top: #232620;
+            --sky-mid: #3a4033;
+            --sky-horizon: #757353;
+            --sun-core: #f0dfb4;
+            --sun-halo: rgba(186, 184, 132, 0.26);
+            --mountain-far: #33382c;
+            --mountain-near: #21241c;
+            --water-tint: rgba(186, 184, 132, 0.15);
+        }
+
+        body {
+            background-color: var(--sky-top);
+            transition: background-color 1.5s ease;
+        }
+
+        .landscape-transition * {
+            transition: fill 1.5s ease, stop-color 1.5s ease, opacity 1.5s ease;
+        }
+
+        /* Glassmorphic Warm Beige Cards */
+        .sanctuary-card {
+            background: linear-gradient(165deg, rgba(66, 54, 44, 0.84) 0%, rgba(46, 37, 30, 0.90) 100%);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(217, 160, 91, 0.18);
+            box-shadow: 0 20px 50px -12px rgba(15, 11, 8, 0.65), inset 0 1px 0 0 rgba(255, 240, 220, 0.08);
+        }
+
+        .sub-card {
+            background: rgba(38, 31, 25, 0.55);
+            border: 1px solid rgba(217, 160, 91, 0.14);
+        }
+
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(38, 31, 25, 0.3);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(217, 160, 91, 0.35);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(217, 160, 91, 0.6);
+        }
+
+        /* Falling Petals & Leaves Animation */
+        .petal-particle {
+            position: fixed;
+            top: -40px;
+            pointer-events: none;
+            z-index: 1;
+            animation: driftFall linear infinite;
+        }
+
+        @keyframes driftFall {
+            0% {
+                transform: translateY(-40px) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            12% {
+                opacity: var(--max-opacity, 0.45);
+            }
+            50% {
+                transform: translateY(50vh) translateX(35px) rotate(180deg);
+            }
+            88% {
+                opacity: var(--max-opacity, 0.45);
+            }
+            100% {
+                transform: translateY(108vh) translateX(-20px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Water ripple subtle animation */
+        .water-ripple {
+            animation: ripplePulse 7s ease-in-out infinite;
+            transform-origin: center;
+        }
+        @keyframes ripplePulse {
+            0%, 100% { transform: scaleX(1); opacity: 0.35; }
+            50% { transform: scaleX(1.06); opacity: 0.65; }
+        }
+
+        /* Lamp Unlit State */
+        .lamp-unlit .animate-flicker { animation: none !important; opacity: 0 !important; }
+        .lamp-unlit path[fill="#ffd996"] { opacity: 0 !important; }
+
+        /* Pause animations when user turns Calm Motion off */
+        body.motion-paused .petal-particle,
+        body.motion-paused .animate-spin-slow,
+        body.motion-paused .animate-flicker,
+        body.motion-paused .animate-float-gentle,
+        body.motion-paused .water-ripple {
+            animation-play-state: paused !important;
+        }
+        body.motion-paused .petal-particle {
+            opacity: 0 !important;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Guided Breathing Circle Transitions */
+        .breath-orb {
+            transition: transform 4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 4s ease, background-color 4s ease;
+        }
+        .breath-orb.inhale {
+            transform: scale(1.48);
+            box-shadow: 0 0 55px rgba(217, 160, 91, 0.45);
+        }
+        .breath-orb.hold {
+            transform: scale(1.48);
+            box-shadow: 0 0 65px rgba(232, 190, 132, 0.55);
+        }
+        .breath-orb.exhale {
+            transition: transform 6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 6s ease;
+            transform: scale(0.88);
+            box-shadow: 0 0 20px rgba(217, 160, 91, 0.18);
+        }
+
+        /* Mood chip hover & active */
+        .mood-chip {
+            transition: all 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .mood-chip:hover {
+            transform: translateY(-1px);
+            background-color: rgba(217, 160, 91, 0.18);
+            border-color: rgba(217, 160, 91, 0.55);
+        }
+        .mood-chip.selected {
+            background-color: rgba(217, 160, 91, 0.28);
+            border-color: #d9a05b;
+            color: #fff8ef;
+            box-shadow: 0 4px 14px rgba(217, 160, 91, 0.2);
+        }
+    </style>
+</head>
+<body class="text-cream-text min-h-screen relative overflow-x-hidden selection:bg-amber-gold selection:text-espresso-deep">
+
+    <!-- ===================================================================== -->
+    <!-- LAYER 1: DYNAMIC PANORAMIC SVG MEDITATION LANDSCAPE (BACKGROUND)       -->
+    <!-- ===================================================================== -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden landscape-transition" aria-hidden="true">
+        <svg class="w-full h-full object-cover" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <!-- Atmospheric Sky Gradient -->
+                <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color: var(--sky-top)" />
+                    <stop offset="52%" style="stop-color: var(--sky-mid)" />
+                    <stop offset="82%" style="stop-color: var(--sky-horizon)" />
+                    <stop offset="100%" style="stop-color: var(--mountain-near)" />
+                </linearGradient>
+
+                <!-- Sun Radial Halo -->
+                <radialGradient id="sunGlow" cx="50%" cy="56%" r="42%">
+                    <stop offset="0%" style="stop-color: var(--sun-core); stop-opacity: 0.95" />
+                    <stop offset="28%" style="stop-color: var(--sun-core); stop-opacity: 0.42" />
+                    <stop offset="65%" style="stop-color: var(--sun-halo); stop-opacity: 0.16" />
+                    <stop offset="100%" style="stop-color: var(--sky-mid); stop-opacity: 0" />
+                </radialGradient>
+
+                <!-- Tranquil Lake Water Gradient -->
+                <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color: var(--sky-horizon); stop-opacity: 0.55" />
+                    <stop offset="45%" style="stop-color: var(--mountain-far); stop-opacity: 0.85" />
+                    <stop offset="100%" style="stop-color: var(--mountain-near); stop-opacity: 0.98" />
+                </linearGradient>
+
+                <!-- Mist Overlay -->
+                <linearGradient id="mistLayer" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f4ede4" stop-opacity="0" />
+                    <stop offset="50%" stop-color="#f4ede4" stop-opacity="0.09" />
+                    <stop offset="100%" stop-color="#f4ede4" stop-opacity="0" />
+                </linearGradient>
+            </defs>
+
+            <!-- Sky Canvas -->
+            <rect width="1440" height="900" fill="url(#skyGradient)" />
+
+            <!-- Subtle Giant Dharma Wheel Watermark Behind Sun -->
+            <g transform="translate(720, 480)" opacity="0.06">
+                <g class="animate-spin-slow">
+                    <circle cx="0" cy="0" r="240" fill="none" stroke="#f4ede4" stroke-width="2" stroke-dasharray="8 8"/>
+                    <circle cx="0" cy="0" r="195" fill="none" stroke="#f4ede4" stroke-width="3"/>
+                    <circle cx="0" cy="0" r="42" fill="none" stroke="#f4ede4" stroke-width="3"/>
+                    <!-- 8 Spokes of the Noble Eightfold Path -->
+                    <line x1="0" y1="-260" x2="0" y2="260" stroke="#f4ede4" stroke-width="2.5"/>
+                    <line x1="-260" y1="0" x2="260" y2="0" stroke="#f4ede4" stroke-width="2.5"/>
+                    <line x1="-184" y1="-184" x2="184" y2="184" stroke="#f4ede4" stroke-width="2.5"/>
+                    <line x1="184" y1="-184" x2="-184" y2="184" stroke="#f4ede4" stroke-width="2.5"/>
+                </g>
+            </g>
+
+            <!-- Soft Golden Sunrise Halo & Orb -->
+            <circle cx="720" cy="495" r="390" fill="url(#sunGlow)" />
+            <circle cx="720" cy="495" r="92" style="fill: var(--sun-core);" opacity="0.88" />
+            <circle cx="720" cy="495" r="126" fill="none" style="stroke: var(--sun-core);" stroke-width="1.5" opacity="0.32" />
+
+            <!-- Distant Himalayan / Taiwanese Mountain Silhouettes -->
+            <path d="M0,560 Q180,445 360,515 T720,475 T1090,510 T1440,455 L1440,660 L0,660 Z" style="fill: var(--mountain-far);" opacity="0.72" />
+            <path d="M0,595 Q240,510 470,565 T940,535 T1440,560 L1440,680 L0,680 Z" style="fill: var(--mountain-far);" opacity="0.92" />
+
+            <!-- Valley Mist Band -->
+            <rect x="0" y="530" width="1440" height="95" fill="url(#mistLayer)" />
+
+            <!-- Peaceful Distant Mountain Pagoda / Temple on Right Ridge -->
+            <g transform="translate(1065, 456)" style="fill: var(--mountain-near);" opacity="0.92">
+                <!-- Temple Base & Steps -->
+                <rect x="18" y="64" width="54" height="16" rx="2" />
+                <polygon points="10,64 80,64 72,56 18,56" />
+                <!-- Tier 1 Roof -->
+                <path d="M4,56 Q45,48 86,56 L74,45 L16,45 Z" />
+                <rect x="24" y="34" width="42" height="11" />
+                <!-- Tier 2 Roof -->
+                <path d="M10,34 Q45,26 80,34 L69,24 L21,24 Z" />
+                <rect x="30" y="14" width="30" height="10" />
+                <!-- Tier 3 Roof & Golden Spire -->
+                <path d="M16,14 Q45,6 74,14 L62,5 L28,5 Z" />
+                <line x1="45" y1="5" x2="45" y2="-9" stroke="#e8be84" stroke-width="2" stroke-linecap="round" />
+                <circle cx="45" cy="-10" r="2.5" fill="#f5cf93" />
+            </g>
+
+            <!-- Tranquil Reflective Lake -->
+            <rect x="0" y="625" width="1440" height="275" fill="url(#waterGradient)" />
+            <!-- Sun Reflection Shimmer on Water -->
+            <ellipse cx="720" cy="655" rx="95" ry="8" style="fill: var(--sun-core);" opacity="0.32" class="water-ripple" />
+            <ellipse cx="720" cy="685" rx="68" ry="5" style="fill: var(--sun-core);" opacity="0.22" class="water-ripple" style="animation-delay: 1.5s;" />
+            <ellipse cx="720" cy="718" rx="42" ry="3.5" style="fill: var(--sun-core);" opacity="0.16" class="water-ripple" style="animation-delay: 3s;" />
+
+            <!-- Foreground Soft Hills & Meditating Silhouette -->
+            <path d="M0,715 Q290,645 610,725 T1440,695 L1440,900 L0,900 Z" style="fill: var(--mountain-near);" />
+            <path d="M480,755 Q720,690 960,760 L1060,900 L380,900 Z" style="fill: var(--sky-top);" opacity="0.95" />
+
+            <!-- Quiet Meditating Figure on the Hill Looking Toward Sunrise -->
+            <g transform="translate(720, 712)" style="fill: var(--espresso-deep);" opacity="0.95">
+                <!-- Crossed Legs Base -->
+                <ellipse cx="0" cy="14" rx="22" ry="6.5" />
+                <!-- Torso & Shoulders -->
+                <path d="M-12,12 C-13,0 -9,-10 0,-10 C9,-10 13,0 12,12 Z" />
+                <!-- Head & Topknot -->
+                <circle cx="0" cy="-18" r="6.5" />
+                <circle cx="0" cy="-25" r="2.6" />
+            </g>
+
+            <!-- Silhouetted Sacred Bodhi Tree on Left Framing the Scene -->
+            <g style="fill: var(--espresso-deep);" opacity="0.94">
+                <!-- Trunk and Root Base -->
+                <path d="M75,900 C92,805 102,715 95,625 C88,545 65,495 35,445 L55,440 C82,485 104,530 114,595 C135,540 175,495 235,465 L242,476 C188,506 148,552 126,618 C122,705 130,805 155,900 Z" />
+                <!-- Overhanging Bodhi Foliage Canopies -->
+                <ellipse cx="95" cy="435" rx="145" ry="68" />
+                <ellipse cx="215" cy="468" rx="115" ry="52" />
+                <ellipse cx="35" cy="480" rx="105" ry="58" />
+                <!-- Hanging Heart-Shaped Bodhi Leaf Vines -->
+                <path d="M180,505 Q183,538 178,565" stroke="#261f19" stroke-width="1.8" fill="none" />
+                <path d="M178,565 C173,572 178,580 178,582 C178,580 183,572 178,565 Z" />
+                <path d="M245,498 Q248,528 244,552" stroke="#261f19" stroke-width="1.5" fill="none" />
+                <path d="M244,552 C240,558 244,565 244,567 C244,565 248,558 244,552 Z" />
+            </g>
+
+            <!-- Gentle Foreground Lotus Leaves & Blossoms on Water Edge -->
+            <g transform="translate(1240, 775)" opacity="0.85">
+                <ellipse cx="0" cy="18" rx="34" ry="7" style="fill: var(--mountain-far);" />
+                <!-- Minimalist Lotus Blossom -->
+                <path d="M0,14 C-6,2 -4,-10 0,-16 C4,-10 6,2 0,14 Z" fill="#e8be84" opacity="0.7" />
+                <path d="M-2,14 C-14,6 -16,-4 -12,-10 C-6,-4 -3,4 -2,14 Z" fill="#d9a05b" opacity="0.6" />
+                <path d="M2,14 C14,6 16,-4 12,-10 C6,-4 3,4 2,14 Z" fill="#d9a05b" opacity="0.6" />
+            </g>
+        </svg>
+    </div>
+
+    <!-- WARM LAMP GLOW OVERLAY -->
+    <div id="lamp-glow" class="fixed inset-0 pointer-events-none z-[5] transition-opacity duration-1000 opacity-100 mix-blend-screen" style="background: radial-gradient(circle at top left, rgba(217, 160, 91, 0.15) 0%, transparent 60%);"></div>
+
+    <!-- ===================================================================== -->
+    <!-- LAYER 2: FLOATING LOTUS PETALS & BODHI LEAVES CONTAINER               -->
+    <!-- ===================================================================== -->
+    <div id="petals-container" class="fixed inset-0 pointer-events-none z-1 overflow-hidden" aria-hidden="true"></div>
+
+    <!-- ===================================================================== -->
+    <!-- LAYER 3: TOP AMBIENT BAR (MOTION TOGGLE & QUICK SANCTUARY TOOLS)      -->
+    <!-- ===================================================================== -->
+    <header class="relative z-20 max-w-4xl mx-auto pt-4 px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+        <!-- Left: Glowing Butter Lamp / Candle Indicator -->
+        <button onclick="toggleLamp()" class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-espresso-deep/70 hover:bg-espresso-deep/90 border border-amber-gold/20 hover:border-amber-gold/40 backdrop-blur-md transition-all">
+            <!-- Animated SVG Butter Lamp -->
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer Warm Halo -->
+                <circle id="lamp-halo" cx="12" cy="7" r="6" fill="#d9a05b" opacity="0.22" class="animate-flicker transition-opacity duration-700" />
+                <!-- Flame -->
+                <path id="lamp-flame" d="M12 3C12 3 9.2 6.4 9.2 8.5C9.2 10.05 10.45 11.3 12 11.3C13.55 11.3 14.8 10.05 14.8 8.5C14.8 6.4 12 3 12 3Z" fill="#ffd996" class="animate-flicker transition-opacity duration-700" />
+                <!-- Traditional Tibetan Butter Lamp Chalice -->
+                <path d="M6.5 12.5H17.5L15.5 16H8.5L6.5 12.5Z" fill="#d9a05b" />
+                <rect x="10.8" y="16" width="2.4" height="3.5" fill="#b88242" />
+                <path d="M7.5 19.5H16.5L17.5 21H6.5L7.5 19.5Z" fill="#d9a05b" />
+            </svg>
+            <span id="lamp-text" class="text-xs font-medium tracking-wide text-cream-muted transition-colors duration-700">Lamp: Lit</span>
+        </button>
+
+        <!-- Right: Calm Motion Controls & Language -->
+        <div class="flex items-center gap-2">
+            <button onclick="toggleLanguage()" class="px-3 py-1.5 rounded-full bg-espresso-deep/70 hover:bg-espresso-deep/90 border border-sand-border/50 text-cream-muted text-xs font-medium transition-all backdrop-blur-md">
+                <span id="lang-text">EN / 中文</span>
+            </button>
+            <button id="motion-toggle-btn" onclick="toggleCalmMotion()" title="Pause or resume background animations" class="px-3 py-1.5 rounded-full bg-espresso-deep/70 hover:bg-espresso-deep/90 border border-sand-border/50 text-cream-muted text-xs font-medium transition-all flex items-center gap-1.5 backdrop-blur-md">
+                <span id="motion-dot" class="w-2 h-2 rounded-full bg-amber-gold"></span>
+                <span id="motion-label">Calm Motion: On</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- LAYER 4: MAIN SANCTUARY CONTENT                                       -->
+    <!-- ===================================================================== -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 pt-5 pb-20 space-y-6">
+
+        <!-- HERO TITLE & GOLDEN LINE-ART LOTUS EMBLEM -->
+        <section class="text-center animate-fade-in pt-1">
+            <!-- Golden Line-Art Lotus Emblem (Inspired by user's reference) -->
+            <div class="inline-flex items-center justify-center mb-2 animate-float-gentle">
+                <svg class="w-16 h-12 sm:w-20 sm:h-14" viewBox="0 0 120 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Center Petal -->
+                    <path d="M60 10 C50 28 50 48 60 62 C70 48 70 28 60 10 Z" stroke="#d9a05b" stroke-width="2.2" fill="rgba(217, 160, 91, 0.08)" stroke-linejoin="round"/>
+                    <!-- Inner Left & Right Petals -->
+                    <path d="M60 62 C44 50 38 32 43 17 C51 24 55 38 60 62 Z" stroke="#d9a05b" stroke-width="2.2" fill="rgba(217, 160, 91, 0.05)" stroke-linejoin="round"/>
+                    <path d="M60 62 C76 50 82 32 77 17 C69 24 65 38 60 62 Z" stroke="#d9a05b" stroke-width="2.2" fill="rgba(217, 160, 91, 0.05)" stroke-linejoin="round"/>
+                    <!-- Middle Left & Right Petals -->
+                    <path d="M60 62 C36 56 23 41 24 26 C35 29 44 41 60 62 Z" stroke="#d9a05b" stroke-width="2.2" stroke-linejoin="round"/>
+                    <path d="M60 62 C84 56 97 41 96 26 C85 29 76 41 60 62 Z" stroke="#d9a05b" stroke-width="2.2" stroke-linejoin="round"/>
+                    <!-- Outer Base Petals -->
+                    <path d="M60 62 C33 65 14 55 10 42 C23 41 38 48 60 62 Z" stroke="#d9a05b" stroke-width="2.2" stroke-linejoin="round"/>
+                    <path d="M60 62 C87 65 106 55 110 42 C97 41 82 48 60 62 Z" stroke="#d9a05b" stroke-width="2.2" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <h1 class="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-cream-text drop-shadow-sm">
+                <span id="title-main">Us <span class="italic text-amber-soft font-normal">Calming</span> the World</span>
+            </h1>
+            <p id="title-sub" class="font-serif text-sm sm:text-base text-cream-muted/90 mt-1.5 max-w-xl mx-auto">
+                Set down whatever heavy thought you are carrying. Breathe, reflect, and receive gentle wisdom rooted in Buddhist compassion.
+            </p>
+            
+            <!-- HIGHLY VISIBLE GUIDED BREATHING MEDITATION BUTTON -->
+            <div class="mt-8 flex justify-center">
+                <button onclick="openBreathingModal()" class="group relative px-6 py-3.5 rounded-full bg-espresso-deep/70 border border-amber-gold/40 text-amber-soft text-sm sm:text-base font-medium tracking-wide shadow-[0_0_20px_rgba(217,160,91,0.15)] hover:shadow-[0_0_25px_rgba(217,160,91,0.35)] hover:bg-espresso-deep transition-all duration-500 flex items-center gap-3 backdrop-blur-sm">
+                    <!-- Gentle pulsing ring -->
+                    <span class="absolute inset-0 rounded-full border border-amber-gold animate-ping opacity-20" style="animation-duration: 3s;"></span>
+                    <svg class="w-5 h-5 text-amber-gold group-hover:scale-110 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3c-1.5 3.5-5 6.5-5 10a5 5 0 0010 0c0-3.5-3.5-6.5-5-10z"/></svg>
+                    <span id="btn-breathing-main">Guided Breathing Meditation</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- DAILY REFLECTION & GRATITUDE SANCTUARY STRIP -->
+        <section class="sanctuary-card rounded-3xl p-5 sm:p-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch">
+                
+                <!-- Left: Daily Buddhist Reflection + Instant Quiet Blessing -->
+                <div class="sub-card rounded-2xl p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span id="label-daily-reflection" class="text-[11px] uppercase tracking-widest text-amber-gold font-semibold flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
+                                Daily Dharma Reflection
+                            </span>
+                            <button id="btn-next-quote" onclick="cycleDailyQuote()" title="Another reflection" class="text-xs text-cream-muted hover:text-amber-soft transition-colors">
+                                Next ↻
+                            </button>
+                        </div>
+                        <p id="daily-quote-text" class="font-serif italic text-sm sm:text-[15px] text-cream-text leading-relaxed">
+                            “You are the sky. Everything else—it’s just the weather.”
+                        </p>
+                        <p id="daily-quote-author" class="text-xs text-amber-soft/90 mt-2 font-medium">
+                            — Pema Chödrön (Kagyu Tradition)
+                        </p>
+                    </div>
+
+                    <div class="mt-4 pt-3 border-t border-sand-border/30">
+                        <button onclick="revealQuietBlessing()" class="w-full py-2 px-3 rounded-xl bg-amber-gold/15 hover:bg-amber-gold/25 border border-amber-gold/35 text-amber-soft text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2">
+                            <span id="btn-quiet-blessing">Receive a Quiet Blessing</span>
+                            <span aria-hidden="true">✦</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Gentle Daily Gratitude Anchor -->
+                <div class="sub-card rounded-2xl p-4 flex flex-col justify-between">
+                    <div>
+                        <span id="label-gratitude-anchor" class="text-[11px] uppercase tracking-widest text-amber-gold font-semibold block mb-2">
+                            Mindful Gratitude Anchor
+                        </span>
+                        <label id="label-gratitude-prompt" for="gratitude-input" class="font-serif text-sm text-cream-text block mb-2.5">
+                            What is one small thing bringing you peace or gratitude today?
+                        </label>
+                        <div class="flex gap-2">
+                            <input id="gratitude-input" type="text" placeholder="Warm tea, a quiet walk, a kind message..." class="w-full px-3 py-2 rounded-xl bg-espresso-deep/80 border border-sand-border/50 text-xs sm:text-sm text-cream-text placeholder-cream-muted/45 focus:outline-none focus:border-amber-gold transition-colors" onkeydown="if(event.key==='Enter') anchorGratitude()">
+                            <button id="btn-anchor" onclick="anchorGratitude()" class="px-3.5 py-2 rounded-xl bg-beige-elevated hover:bg-amber-gold hover:text-espresso-deep border border-sand-border/60 text-xs font-medium text-cream-text transition-colors shrink-0">
+                                Anchor
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Saved Gratitude Display -->
+                    <div id="gratitude-display" class="mt-3 text-xs text-cream-muted/85 font-serif italic min-h-[28px] flex items-center">
+                        <span id="gratitude-default" class="opacity-70">Even the smallest warmth softens a heavy day.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MAIN WORRY / EMOTION SELECTOR CARD -->
+        <section class="sanctuary-card rounded-3xl p-5 sm:p-8 animate-fade-in" style="animation-delay: 0.2s;">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                <div>
+                    <h2 id="title-worry" class="font-display text-2xl sm:text-3xl font-semibold text-cream-text">
+                        What weight are you carrying today?
+                    </h2>
+                    <p id="subtitle-worry" class="text-xs sm:text-sm text-cream-muted mt-0.5">
+                        Choose a feeling below or describe what is on your heart.
+                    </p>
+                </div>
+
+                <!-- Quick Filter Input for 20 Student Challenges -->
+                <div class="relative w-full sm:w-52 shrink-0">
+                    <input id="filter-challenges" type="text" oninput="filterChallenges(this.value)" placeholder="Filter feelings..." class="w-full pl-8 pr-3 py-1.5 rounded-full bg-espresso-deep/75 border border-sand-border/50 text-xs text-cream-text placeholder-cream-muted/50 focus:outline-none focus:border-amber-gold">
+                    <svg class="w-3.5 h-3.5 text-cream-muted/60 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+            </div>
+
+            <!-- 20 Student Life Challenges Grid -->
+            <div id="challenges-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[295px] overflow-y-auto pr-1.5 py-1">
+                <!-- Populated cleanly via JS -->
+            </div>
+
+            <!-- Divider -->
+            <div class="relative flex items-center justify-center my-6">
+                <div class="w-full border-t border-sand-border/40"></div>
+                <span id="label-or-share" class="px-3 text-[11px] uppercase tracking-widest text-cream-muted/75 bg-[#382e25] rounded-full">
+                    or share in your own words
+                </span>
+            </div>
+
+            <!-- Other – Describe How You Feel -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <label id="label-other-worry" for="custom-worry" class="text-sm font-medium text-cream-text flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-amber-gold"></span>
+                        Other – Describe how you feel
+                    </label>
+                    <span id="selected-badge" class="hidden text-xs px-2.5 py-0.5 rounded-full bg-amber-gold/20 text-amber-soft border border-amber-gold/30">Selected</span>
+                </div>
+
+                <textarea id="custom-worry" rows="3" placeholder="Write freely and quietly here... No one is judging you." class="w-full p-3.5 rounded-2xl bg-espresso-deep/80 border border-sand-border/60 focus:outline-none focus:ring-2 focus:ring-amber-gold/50 focus:border-amber-gold text-sm text-cream-text placeholder-cream-muted/45 resize-none transition-all font-serif"></textarea>
+
+                <button id="submit-btn" onclick="submitCustomWorry()" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#c88d46] via-[#d9a05b] to-[#c88d46] hover:brightness-105 text-espresso-deep font-semibold text-sm sm:text-base tracking-wide shadow-lg shadow-espresso-deep/50 transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-2.5 4-4 7.5-4 10.5a4 4 0 008 0C16 10.5 14.5 7 12 3z"/></svg>
+                    <span id="btn-receive-guidance">Receive Buddhist Reflection & Guidance</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- QUIET FOOTER NOTE (Double-click to open secret API modal) -->
+        <footer class="text-center text-xs text-cream-muted/70 pt-2 cursor-default select-none" ondblclick="openApiKeyModal()" title="Double-click to configure API Key">
+            <p id="footer-quote" class="font-serif italic">“Peace comes from within. Do not seek it without.” — Gautama Buddha</p>
+        </footer>
+    </main>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 1: MINDFUL LOADING OVERLAY                                      -->
+    <!-- ===================================================================== -->
+    <div id="loading-overlay" class="fixed inset-0 z-50 hidden bg-espresso-deep/85 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
+        <div class="relative w-24 h-24 flex items-center justify-center mb-5">
+            <div class="absolute inset-0 rounded-full border border-amber-gold/40 animate-ping" style="animation-duration: 3s;"></div>
+            <div class="w-16 h-16 rounded-full bg-amber-gold/20 border border-amber-gold/60 flex items-center justify-center">
+                <!-- Rotating Dharma Wheel -->
+                <svg class="w-9 h-9 text-amber-soft animate-spin" style="animation-duration: 12s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <circle cx="12" cy="12" r="8"/>
+                    <circle cx="12" cy="12" r="2"/>
+                    <path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/>
+                </svg>
+            </div>
+        </div>
+        <p id="loading-title" class="font-display text-2xl text-cream-text mb-1">Take one slow breath...</p>
+        <p id="loading-sub" class="font-serif text-sm text-cream-muted">Gathering gentle words of wisdom for you</p>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 2: PERSONALIZED BUDDHIST ADVICE / QUIET BLESSING CARD           -->
+    <!-- ===================================================================== -->
+    <div id="advice-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-espresso-deep/80 backdrop-blur-sm transition-opacity" onclick="closeAdviceModal()"></div>
+
+        <div id="advice-panel" class="sanctuary-card relative w-full max-w-lg rounded-3xl p-6 sm:p-8 z-10 transform scale-95 opacity-0 transition-all duration-300 max-h-[90vh] overflow-y-auto">
+            <!-- Decorative Top Dharma Wheel & Close Button -->
+            <div class="flex items-center justify-between mb-4 pb-3 border-b border-sand-border/40">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-full bg-amber-gold/15 border border-amber-gold/40 flex items-center justify-center text-amber-soft">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="8"/>
+                            <circle cx="12" cy="12" r="2"/>
+                            <path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9L4.9 19.1"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span id="modal-subtitle" class="text-[11px] uppercase tracking-widest text-amber-gold font-semibold block">Compassionate Reflection</span>
+                        <h3 id="modal-topic-title" class="font-display text-xl font-semibold text-cream-text leading-tight">A Gentle Pause</h3>
+                    </div>
+                </div>
+
+                <button onclick="closeAdviceModal()" class="p-1.5 rounded-full text-cream-muted hover:text-cream-text hover:bg-espresso-deep/60 transition-colors" aria-label="Close">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+
+            <!-- AI / Buddhist Wisdom Body -->
+            <div id="advice-content" class="font-serif text-sm sm:text-[15.5px] leading-relaxed text-cream-text/95 space-y-4 my-5">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Gentle Grounding Micro-Step -->
+            <div class="rounded-2xl bg-espresso-deep/65 border border-amber-gold/25 p-3.5 mb-6 flex items-start gap-3">
+                <span class="text-amber-gold text-lg leading-none mt-0.5">🪷</span>
+                <p id="micro-practice-text" class="text-xs text-cream-muted leading-relaxed">
+                    <strong class="text-amber-soft font-medium">Small Mindful Action:</strong> Unclench your jaw, drop your shoulders away from your ears, and take three slow breaths before returning to your day.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 3: "TAKE A MOMENT TO BREATHE" GUIDED BREATHING SANCTUARY        -->
+    <!-- ===================================================================== -->
+    <div id="breathing-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-espresso-deep/85 backdrop-blur-md" onclick="closeBreathingModal()"></div>
+
+        <div class="sanctuary-card relative w-full max-w-md rounded-3xl p-6 sm:p-8 z-10 text-center">
+            <button onclick="closeBreathingModal()" class="absolute top-5 right-5 p-1.5 rounded-full text-cream-muted hover:text-cream-text hover:bg-espresso-deep/60 transition-colors" aria-label="Close breathing guide">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <span id="breath-modal-subtitle" class="text-[11px] uppercase tracking-widest text-amber-gold font-semibold">Sati — Mindful Breathing</span>
+            <h3 id="breath-modal-title" class="font-display text-2xl sm:text-3xl font-semibold text-cream-text mt-1">Take a Moment to Breathe</h3>
+            <p id="breath-modal-desc" class="font-serif text-xs sm:text-sm text-cream-muted mt-1">
+                Follow the expanding golden lotus. Let your thoughts settle like silt in clear water.
+            </p>
+
+            <!-- Expanding / Contracting Breathing Circle -->
+            <div class="relative h-60 flex items-center justify-center my-4">
+                <!-- Outer Static Guide Ring -->
+                <div class="absolute w-48 h-48 rounded-full border border-dashed border-amber-gold/30"></div>
+                
+                <!-- Animated Breathing Orb -->
+                <div id="breath-orb" class="breath-orb w-32 h-32 rounded-full bg-gradient-to-br from-amber-gold/35 to-terracotta-muted/30 border border-amber-gold/60 flex items-center justify-center">
+                    <!-- Glowing Lotus Inside Orb -->
+                    <svg class="w-14 h-14 text-amber-soft" viewBox="0 0 120 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M60 10 C50 28 50 48 60 62 C70 48 70 28 60 10 Z" stroke="currentColor" stroke-width="2.4" fill="rgba(232,190,132,0.18)"/>
+                        <path d="M60 62 C44 50 38 32 43 17 C51 24 55 38 60 62 Z" stroke="currentColor" stroke-width="2.2"/>
+                        <path d="M60 62 C76 50 82 32 77 17 C69 24 65 38 60 62 Z" stroke="currentColor" stroke-width="2.2"/>
+                        <path d="M60 62 C36 56 23 41 24 26 C35 29 44 41 60 62 Z" stroke="currentColor" stroke-width="2.2"/>
+                        <path d="M60 62 C84 56 97 41 96 26 C85 29 76 41 60 62 Z" stroke="currentColor" stroke-width="2.2"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="space-y-1 mb-5">
+                <p id="breath-instruction" class="font-display text-2xl text-amber-soft font-semibold">Ready when you are</p>
+                <p id="breath-timer-sub" class="text-xs text-cream-muted">4s Inhale • 4s Hold • 6s Exhale</p>
+            </div>
+
+            <button id="breath-control-btn" onclick="toggleBreathingCycle()" class="w-full py-3 rounded-2xl bg-amber-gold text-espresso-deep font-semibold text-sm hover:brightness-105 transition-all">
+                Begin Guided Breath
+            </button>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 4: SECURE BROWSER-ONLY API KEY CONFIGURATION                    -->
+    <!-- ===================================================================== -->
+    <div id="apikey-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-espresso-deep/85 backdrop-blur-md" onclick="closeApiKeyModal()"></div>
+
+        <div class="sanctuary-card relative w-full max-w-md rounded-3xl p-6 sm:p-8 z-10">
+            <button onclick="closeApiKeyModal()" class="absolute top-5 right-5 p-1.5 rounded-full text-cream-muted hover:text-cream-text hover:bg-espresso-deep/60 transition-colors" aria-label="Close API key settings">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <span id="api-modal-subtitle" class="text-[11px] uppercase tracking-widest text-amber-gold font-semibold">Safe GitHub Hosting</span>
+            <h3 id="api-modal-title" class="font-display text-2xl font-semibold text-cream-text mt-1">Gemini API Key</h3>
+            <p id="api-modal-desc" class="font-serif text-xs sm:text-sm text-cream-muted mt-1.5 leading-relaxed">
+                Your key is saved strictly inside your browser's local storage and is never uploaded to GitHub.
+            </p>
+
+            <div class="mt-4 space-y-3">
+                <input id="api-key-input" type="password" placeholder="AIzaSy..." class="w-full px-3.5 py-2.5 rounded-xl bg-espresso-deep/80 border border-sand-border/60 text-sm text-cream-text placeholder-cream-muted/40 focus:outline-none focus:border-amber-gold">
+                <div class="flex gap-2">
+                    <button id="btn-save-key" onclick="saveUserApiKey()" class="flex-1 py-2.5 rounded-xl bg-amber-gold text-espresso-deep font-semibold text-xs sm:text-sm hover:brightness-105 transition-all">
+                        Save Key
+                    </button>
+                    <button id="btn-clear-key" onclick="clearUserApiKey()" class="px-4 py-2.5 rounded-xl bg-espresso-deep/80 hover:bg-terracotta-muted/30 border border-sand-border/60 text-cream-muted text-xs sm:text-sm transition-all">
+                        Clear
+                    </button>
+                </div>
+                <p id="api-key-status-msg" class="text-xs text-amber-soft font-serif italic min-h-[18px]"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT LOGIC: BILINGUAL + GEMINI API + INTERACTIVE FEATURES       -->
+    <!-- ===================================================================== -->
+    <script>
+        // =========================================================================
+        // 1. GEMINI API CONFIGURATION (Stored safely in browser localStorage)
+        const STORAGE_KEY = "calming_world_gemini_key";
+        function getActiveApiKey() {
+            return localStorage.getItem(STORAGE_KEY) || "";
+        }
+        // =========================================================================
+
+        let currentLang = 'en'; // Default language
+
+        // --- I18N DICTIONARY FOR UI TEXT ---
+        const I18N = {
+            en: {
+                titleMain: 'Us <span class="italic text-amber-soft font-normal">Calming</span> the World',
+                titleSub: 'Set down whatever heavy thought you are carrying. Breathe, reflect, and receive gentle wisdom rooted in Buddhist compassion.',
+                btnBreathingMain: 'Guided Breathing Meditation',
+                lampLit: 'Lamp: Lit',
+                lampUnlit: 'Lamp: Unlit',
+                motionOn: 'Calm Motion: On',
+                motionOff: 'Calm Motion: Off',
+                apiKeySet: 'API Key: Ready',
+                apiKeyUnset: 'API Key',
+                apiModalSubtitle: 'Safe GitHub Hosting',
+                apiModalTitle: 'Gemini API Key',
+                apiModalDesc: 'Your key is saved strictly inside your browser\'s local storage and is never uploaded to GitHub.',
+                btnSaveKey: 'Save Key',
+                btnClearKey: 'Clear',
+                apiSavedMsg: 'Key saved locally in this browser.',
+                apiClearedMsg: 'Key removed from this browser.',
+                labelDailyReflection: 'Daily Dharma Reflection',
+                btnNextQuote: 'Next ↻',
+                btnQuietBlessing: 'Receive a Quiet Blessing',
+                labelGratitudeAnchor: 'Mindful Gratitude Anchor',
+                labelGratitudePrompt: 'What is one small thing bringing you peace or gratitude today?',
+                gratitudePlaceholder: 'Warm tea, a quiet walk, a kind message...',
+                btnAnchor: 'Anchor',
+                gratitudeDefault: 'Even the smallest warmth softens a heavy day.',
+                titleWorry: 'What weight are you carrying today?',
+                subtitleWorry: 'Choose a feeling below or describe what is on your heart.',
+                filterPlaceholder: 'Filter feelings...',
+                labelOrShare: 'or share in your own words',
+                labelOtherWorry: 'Other – Describe how you feel',
+                selectedBadge: 'Selected',
+                customWorryPlaceholder: 'Write freely and quietly here... No one is judging you.',
+                btnReceiveGuidance: 'Receive Buddhist Reflection & Guidance',
+                footerQuote: '“Peace comes from within. Do not seek it without.” — Gautama Buddha',
+                loadingTitle: 'Take one slow breath...',
+                loadingSub: 'Gathering gentle words of wisdom for you',
+                breathModalSubtitle: 'Sati — Mindful Breathing',
+                breathModalTitle: 'Take a Moment to Breathe',
+                breathModalDesc: 'Follow the expanding golden lotus. Let your thoughts settle like silt in clear water.',
+                breathReady: 'Ready when you are',
+                breathTimerSub: '4s Inhale • 4s Hold • 6s Exhale',
+                btnBreathStart: 'Begin Guided Breath',
+                btnBreathPause: 'Pause Breathing Guide',
+                breathInhale: 'Inhale slowly... (4s)',
+                breathHold: 'Hold gently... (4s)',
+                breathExhale: 'Exhale and release... (6s)',
+                fallbackNoMatch: 'No matching preset found—please describe how you feel in the box below.',
+                microPracticePrefix: 'Small Mindful Action:',
+                anchoredPrefix: '🪷 Anchored today:',
+                langToggle: '中文',
+                buddhistReflectionSubtitle: 'Compassionate Reflection',
+                blessingSubtitle: 'A Quiet Blessing for You'
+            },
+            zh: {
+                titleMain: '平靜的世界 <span class="italic text-amber-soft font-normal">(Us Calming the World)</span>',
+                titleSub: '放下你心中的重擔。呼吸、反思，並接受源於佛教慈悲的溫和智慧。',
+                btnBreathingMain: '引導式呼吸冥想',
+                lampLit: '明燈：已點亮',
+                lampUnlit: '明燈：未點亮',
+                motionOn: '平靜動態：開啟',
+                motionOff: '平靜動態：關閉',
+                apiKeySet: '金鑰：已就緒',
+                apiKeyUnset: 'API 金鑰',
+                apiModalSubtitle: '安全託管於 GitHub',
+                apiModalTitle: 'Gemini API 金鑰',
+                apiModalDesc: '您的金鑰僅安全儲存在此瀏覽器的本機儲存空間中，絕不會上傳至 GitHub。',
+                btnSaveKey: '儲存金鑰',
+                btnClearKey: '清除',
+                apiSavedMsg: '金鑰已安全儲存於此瀏覽器。',
+                apiClearedMsg: '已從此瀏覽器移除金鑰。',
+                labelDailyReflection: '每日佛法省思',
+                btnNextQuote: '下一個 ↻',
+                btnQuietBlessing: '接收寧靜的祝福',
+                labelGratitudeAnchor: '正念感恩之錨',
+                labelGratitudePrompt: '今天有哪件小事為你帶來了平靜或感恩？',
+                gratitudePlaceholder: '一杯熱茶、一次安靜的散步、一則善意的訊息...',
+                btnAnchor: '定錨',
+                gratitudeDefault: '即使是最微小的溫暖，也能柔軟沉重的一天。',
+                titleWorry: '今天你承載著什麼重擔？',
+                subtitleWorry: '選擇下方的一種感受，或寫下你的心事。',
+                filterPlaceholder: '篩選感受...',
+                labelOrShare: '或用你自己的話分享',
+                labelOtherWorry: '其他 – 描述你的感受',
+                selectedBadge: '已選擇',
+                customWorryPlaceholder: '在這裡自由且安靜地寫下... 沒有人會評判你。',
+                btnReceiveGuidance: '接收佛教反思與指引',
+                footerQuote: '“平靜來自內心，莫向外求。” — 釋迦牟尼佛',
+                loadingTitle: '慢慢深呼吸...',
+                loadingSub: '正在為你匯聚溫和的智慧話語',
+                breathModalSubtitle: '正念（Sati） — 覺知呼吸',
+                breathModalTitle: '花點時間呼吸',
+                breathModalDesc: '跟隨綻放的金色蓮花。讓你的思緒如清水中的泥沙般沉澱。',
+                breathReady: '準備好就可以開始',
+                breathTimerSub: '吸氣 4 秒 • 屏息 4 秒 • 呼氣 6 秒',
+                btnBreathStart: '開始引導呼吸',
+                btnBreathPause: '暫停呼吸引導',
+                breathInhale: '慢慢吸氣... (4秒)',
+                breathHold: '輕輕屏息... (4秒)',
+                breathExhale: '呼氣並釋放... (6秒)',
+                fallbackNoMatch: '找不到符合的預設選項—請在下方描述你的感受。',
+                microPracticePrefix: '微小的正念行動：',
+                anchoredPrefix: '🪷 今日定錨：',
+                langToggle: 'EN',
+                buddhistReflectionSubtitle: '慈悲的反思',
+                blessingSubtitle: '給你的寧靜祝福'
+            }
+        };
+
+        // --- 20 STUDENT LIFE CHALLENGES ---
+        const STUDENT_CHALLENGES = [
+            { id: "c1", en: "Peer pressure and the need to fit in", zh: "同儕壓力與渴望融入群體", mood: "sage" },
+            { id: "c2", en: "Academic stress and examination anxiety", zh: "學業壓力與考試焦慮", mood: "twilight" },
+            { id: "c3", en: "Fear of failure and disappointing others", zh: "害怕失敗與讓他人失望", mood: "twilight" },
+            { id: "c4", en: "Feeling hopeless or unmotivated", zh: "感到絕望或失去動力", mood: "warmth" },
+            { id: "c5", en: "Loneliness and difficulty making friends", zh: "孤單與交友困難", mood: "warmth" },
+            { id: "c6", en: "Homesickness and missing family", zh: "想家與思念家人", mood: "warmth" },
+            { id: "c7", en: "Feeling lost or uncertain about the future", zh: "對未來感到迷茫或不確定", mood: "sage" },
+            { id: "c8", en: "Low self-confidence and self-doubt", zh: "缺乏自信與自我懷疑", mood: "sage" },
+            { id: "c9", en: "Financial stress and money-related worries", zh: "財務壓力與金錢煩惱", mood: "twilight" },
+            { id: "c10", en: "Difficulty balancing studies and personal life", zh: "難以平衡學業與個人生活", mood: "twilight" },
+            { id: "c11", en: "Relationship problems and heartbreak", zh: "人際關係問題與心碎", mood: "warmth" },
+            { id: "c12", en: "Social anxiety and fear of being judged", zh: "社交焦慮與害怕被評判", mood: "sage" },
+            { id: "c13", en: "Comparing oneself to others", zh: "過度與他人比較", mood: "sage" },
+            { id: "c14", en: "Procrastination and lack of motivation", zh: "拖延與缺乏動力", mood: "twilight" },
+            { id: "c15", en: "Pressure from parents and family expectations", zh: "來自父母與家庭期望的壓力", mood: "twilight" },
+            { id: "c16", en: "Burnout and emotional exhaustion", zh: "倦怠與情緒耗竭", mood: "twilight" },
+            { id: "c17", en: "Difficulty adjusting to a new environment", zh: "難以適應新環境", mood: "warmth" },
+            { id: "c18", en: "Feeling left out or excluded", zh: "感到被冷落或被排擠", mood: "warmth" },
+            { id: "c19", en: "Uncertainty about career choices", zh: "對職涯選擇的迷惘", mood: "sage" },
+            { id: "c20", en: "Struggling to find purpose or meaning in life", zh: "難以尋找人生的目標與意義", mood: "sage" }
+        ];
+
+        // --- DAILY BUDDHIST REFLECTIONS ---
+        const DAILY_REFLECTIONS = [
+            {
+                en: { text: "“You are the sky. Everything else—it’s just the weather.”", author: "— Pema Chödrön (Kagyu Tradition)" },
+                zh: { text: "「你是天空，其他的一切，不過是天氣罷了。」", author: "— 佩瑪·丘卓（噶舉派）" }
+            },
+            {
+                en: { text: "“If you have attachment to this life, you are not a Dharma practitioner.”", author: "— Sachen Kunga Nyingpo (Sakya Tradition)" },
+                zh: { text: "「若執著此生，則非修行者。」", author: "— 薩千·貢噶寧波（薩迦派）" }
+            },
+            {
+                en: { text: "“Without letting go of attachment to the three realms, there is no liberation.”", author: "— Jetsun Drakpa Gyaltsen (Sakya Tradition)" },
+                zh: { text: "「若不放下對三界的執著，便沒有解脫可言。」", author: "— 傑尊札巴堅贊（薩迦派）" }
+            },
+            {
+                en: { text: "“Even when facing misfortune, the wise can transform it into a supportive condition for the path.”", author: "— Sakya Pandita (Sakya Tradition)" },
+                zh: { text: "「智者縱使遭遇不幸，也能將之轉化為道用的助緣。」", author: "— 薩迦班智達（薩迦派）" }
+            },
+            {
+                en: { text: "“If a problem can be solved, why be unhappy? And if it cannot be solved, what is the use of being unhappy?”", author: "— Śāntideva (Mahayana Tradition)" },
+                zh: { text: "「若事尚可為，云何不歡喜？若已不濟事，憂惱有何益？」", author: "— 寂天菩薩《入菩薩行論》" }
+            },
+            {
+                en: { text: "“Walk as if you are kissing the Earth with your feet.”", author: "— Thích Nhất Hạnh (Vietnamese Zen)" },
+                zh: { text: "「走路時，彷彿你的雙腳正在親吻著地球。」", author: "— 一行禪師（越南禪宗）" }
+            },
+            {
+                en: { text: "“My religion is to live and die without regret.”", author: "— Milarepa (Kagyu Tradition)" },
+                zh: { text: "「我的宗教就是無悔地生活與死去。」", author: "— 密勒日巴（噶舉派）" }
+            },
+            {
+                en: { text: "“Since everything is but an apparition, perfect in being what it is, one may well burst out in laughter.”", author: "— Longchenpa (Nyingma Tradition)" },
+                zh: { text: "「既然一切都如幻影，完美呈現其本來面目，無關好壞與取捨，人大可放聲大笑。」", author: "— 龍欽巴（寧瑪派）" }
+            },
+            {
+                en: { text: "“The things of this world are fleeting, like a flash of lightning in the sky.”", author: "— Je Tsongkhapa (Gelug Tradition)" },
+                zh: { text: "「世間萬物皆是無常，如空中閃電般轉瞬即逝。」", author: "— 宗喀巴大師（格魯派）" }
+            },
+            {
+                en: { text: "“If you let go a little, you will have a little peace. If you let go a lot, you will have a lot of peace.”", author: "— Ajahn Chah (Thai Forest Tradition)" },
+                zh: { text: "「放下執著，你便會獲得平靜；放下愈多，平靜愈多。」", author: "— 阿姜查（泰國森林傳承）" }
+            },
+            {
+                en: { text: "“Face it, accept it, deal with it, then let it go.”", author: "— Master Sheng Yen (Chinese Zen)" },
+                zh: { text: "「面對它、接受它、處理它、放下它。」", author: "— 聖嚴法師（漢傳禪宗）" }
+            },
+            {
+                en: { text: "“Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased.”", author: "— The Dhammapada (Theravada Tradition)" },
+                zh: { text: "「在這世上，仇恨永遠無法止息仇恨；唯有慈愛能止息仇恨，這是永恆的真理。」", author: "— 《法句經》（南傳佛教）" }
+            },
+            {
+                en: { text: "“Do not let the mind wander. The present moment is the true teacher.”", author: "— Dilgo Khyentse Rinpoche (Nyingma Tradition)" },
+                zh: { text: "「不要讓心四處流浪。當下，就是最真實的老師。」", author: "— 頂果欽哲仁波切（寧瑪派）" }
+            },
+            {
+                en: { text: "“Compassion is not a handout, but a profound recognition of our deep interconnectedness.”", author: "— 17th Karmapa (Kagyu Tradition)" },
+                zh: { text: "「慈悲不是一種施捨，而是認識到我們與他人緊密相連的深刻體悟。」", author: "— 第十七世大寶法王噶瑪巴（噶舉派）" }
+            },
+            {
+                en: { text: "“Do not look for a sanctuary in anyone except your own self.”", author: "— Gautama Buddha, Mahāparinibbāna Sutta" },
+                zh: { text: "「除了你自己，不要向任何人尋求庇護。」", author: "— 釋迦牟尼佛《大般涅槃經》" }
+            }
+        ];
+
+        // --- INSTANT QUIET BLESSINGS ---
+        const QUIET_BLESSINGS = [
+            {
+                en: {
+                    title: "A Blessing of Loving-Kindness (Mettā)",
+                    body: `<p>May you be gentle with yourself today. You do not have to solve your entire future in a single afternoon—just take care of this present breath.</p><p class="italic text-amber-soft">“May all beings be peaceful, may all beings be happy, may all beings be safe from inner and outer harm.” — Mettā Sutta</p>`,
+                    practice: "Place one hand gently over your chest, feel its warmth, and silently wish yourself peace."
+                },
+                zh: {
+                    title: "慈心（Mettā）的祝福",
+                    body: `<p>願你今天對自己溫柔以待。你不需要在一個下午解決整個未來——只需要照顧好當下的這口呼吸。</p><p class="italic text-amber-soft">「願一切眾生平靜，願一切眾生快樂，願一切眾生免於內在與外在的傷害。」 — 《慈悲經》</p>`,
+                    practice: "將一隻手輕輕放在胸前，感受它的溫暖，並在心中默默祝願自己平靜。"
+                }
+            },
+            {
+                en: {
+                    title: "A Blessing of Impermanence (Anicca)",
+                    body: `<p>Whatever heaviness you are carrying right now is like a cloud passing across a vast mountain sky. Clouds gather, rain, and dissolve—yet the sky itself is never harmed.</p><p class="italic text-amber-soft">“Nothing ever exists entirely alone; everything is in relation to everything else.” — Gautama Buddha</p>`,
+                    practice: "Look out a window for 15 seconds and notice something moving in nature—leaves, clouds, or light."
+                },
+                zh: {
+                    title: "無常（Anicca）的祝福",
+                    body: `<p>無論你現在承載著什麼樣的沉重，都像是飄過群山廣闊天空的雲朵。雲聚、落雨、消散——而天空本身卻絲毫無損。</p><p class="italic text-amber-soft">「沒有任何事物是完全孤立存在的；一切都與其他事物息息相關。」 — 釋迦牟尼佛</p>`,
+                    practice: "看著窗外 15 秒鐘，注意自然界中移動的事物——樹葉、雲朵或是光影。"
+                }
+            }
+        ];
+
+        // --- FALLBACK OFFLINE WISDOM ---
+        const FALLBACK_WISDOM = {
+            "c6": { // Homesickness
+                en: {
+                    text: `<p>Missing the familiar voices, scents, and warmth of home is a tender expression of love, not a weakness. In Buddhist understanding, those who care for us are woven into who we are—distance changes where we stand, never the bond of interdependence that connects us.</p>`,
+                    practice: "Step outside for two minutes, look up at the same sky that stretches over your family back home, and take three slow breaths."
+                },
+                zh: {
+                    text: `<p>思念家鄉熟悉的聲音、氣味與溫暖，是愛的一種溫柔表現，絕非軟弱。在佛教的理解中，那些關愛我們的人早已編織進我們的生命裡——距離改變的只是我們所站的位置，卻永遠無法改變連結著我們的緣起牽絆。</p>`,
+                    practice: "走到室外兩分鐘，抬頭看看那片同樣覆蓋著你家人的天空，然後緩慢地深呼吸三次。"
+                }
+            },
+            "default": {
+                en: {
+                    text: `<p>Whatever weight you are holding right now, meet it with gentleness rather than judgment. In Buddhist philosophy, all emotional storms arise from causes and conditions—and because of impermanence (<em>Anicca</em>), no heavy feeling can stay forever.</p>`,
+                    practice: "Take three unhurried breaths: inhale peace for 4 seconds, and exhale tension for 6 seconds."
+                },
+                zh: {
+                    text: `<p>無論你現在正承受著什麼重擔，請用溫柔而非評判的態度來面對它。在佛教哲學中，所有的情緒風暴皆是由因緣和合而生——也因為無常（<em>Anicca</em>）的法則，沒有任何沉重的感受會永遠停留。</p>`,
+                    practice: "不慌不忙地深呼吸三次：吸入平靜 4 秒鐘，然後呼出緊繃 6 秒鐘。"
+                }
+            }
+        };
+
+        let currentQuoteIndex = 0;
+        let selectedWorryId = "";
+        let calmMotionEnabled = true;
+        let lampLit = true;
+
+        // Initialize UI on Load
+        document.addEventListener("DOMContentLoaded", () => {
+            applyTranslations(); // Set initial lang texts
+            updateApiKeyIndicator();
+            renderChallengeButtons(STUDENT_CHALLENGES);
+            createFloatingPetals();
+        });
+
+        // --- API KEY LOCALSTORAGE MODAL CONTROLS ---
+        function updateApiKeyIndicator() {
+            // Note: Visible API indicator removed to maintain clean UI.
+            // Feature remains fully active in background.
+        }
+
+        function openApiKeyModal() {
+            document.getElementById("api-key-input").value = getActiveApiKey();
+            document.getElementById("api-key-status-msg").textContent = "";
+            document.getElementById("apikey-modal").classList.remove("hidden");
+        }
+
+        function closeApiKeyModal() {
+            document.getElementById("apikey-modal").classList.add("hidden");
+        }
+
+        function saveUserApiKey() {
+            const val = document.getElementById("api-key-input").value.trim();
+            if (val) {
+                localStorage.setItem(STORAGE_KEY, val);
+                document.getElementById("api-key-status-msg").textContent = I18N[currentLang].apiSavedMsg;
+            } else {
+                localStorage.removeItem(STORAGE_KEY);
+                document.getElementById("api-key-status-msg").textContent = I18N[currentLang].apiClearedMsg;
+            }
+            updateApiKeyIndicator();
+            setTimeout(closeApiKeyModal, 700);
+        }
+
+        function clearUserApiKey() {
+            localStorage.removeItem(STORAGE_KEY);
+            document.getElementById("api-key-input").value = "";
+            document.getElementById("api-key-status-msg").textContent = I18N[currentLang].apiClearedMsg;
+            updateApiKeyIndicator();
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            applyTranslations();
+            renderChallengeButtons(STUDENT_CHALLENGES);
+
+            if (selectedWorryId && selectedWorryId !== 'custom') {
+                const currentBtn = document.querySelector(`[data-id="${selectedWorryId}"]`);
+                if (currentBtn) currentBtn.classList.add("selected");
+            }
+        }
+
+        function applyTranslations() {
+            const dict = I18N[currentLang];
+            
+            // Header
+            document.getElementById("lang-text").textContent = dict.langToggle;
+            const lampText = document.getElementById("lamp-text");
+            lampText.textContent = lampLit ? dict.lampLit : dict.lampUnlit;
+            document.getElementById("motion-label").textContent = calmMotionEnabled ? dict.motionOn : dict.motionOff;
+            updateApiKeyIndicator();
+            document.getElementById("api-modal-subtitle").textContent = dict.apiModalSubtitle;
+            document.getElementById("api-modal-title").textContent = dict.apiModalTitle;
+            document.getElementById("api-modal-desc").textContent = dict.apiModalDesc;
+            document.getElementById("btn-save-key").textContent = dict.btnSaveKey;
+            document.getElementById("btn-clear-key").textContent = dict.btnClearKey;
+
+            // Hero
+            document.getElementById("title-main").innerHTML = dict.titleMain;
+            document.getElementById("title-sub").textContent = dict.titleSub;
+            document.getElementById("btn-breathing-main").textContent = dict.btnBreathingMain;
+
+            // Sanctuary Strip
+            document.getElementById("label-daily-reflection").innerHTML = `<svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg> ${dict.labelDailyReflection}`;
+            document.getElementById("btn-next-quote").textContent = dict.btnNextQuote;
+            document.getElementById("btn-quiet-blessing").textContent = dict.btnQuietBlessing;
+            document.getElementById("label-gratitude-anchor").textContent = dict.labelGratitudeAnchor;
+            document.getElementById("label-gratitude-prompt").textContent = dict.labelGratitudePrompt;
+            document.getElementById("gratitude-input").placeholder = dict.gratitudePlaceholder;
+            document.getElementById("btn-anchor").textContent = dict.btnAnchor;
+            
+            // Check if gratitude display is default or custom
+            const gratitudeDisplay = document.getElementById("gratitude-display");
+            if (gratitudeDisplay.querySelector("#gratitude-default")) {
+                gratitudeDisplay.innerHTML = `<span id="gratitude-default" class="opacity-70">${dict.gratitudeDefault}</span>`;
+            } else {
+                // Translated prefix for anchored gratitude
+                const customText = document.getElementById("gratitude-input-val")?.value || "";
+                if(customText) {
+                    gratitudeDisplay.innerHTML = `<span class="text-amber-soft">${dict.anchoredPrefix}</span> <span class="ml-1 text-cream-text">“${customText}”</span>`;
+                }
+            }
+
+            // Worry Selector Section
+            document.getElementById("title-worry").textContent = dict.titleWorry;
+            document.getElementById("subtitle-worry").textContent = dict.subtitleWorry;
+            document.getElementById("filter-challenges").placeholder = dict.filterPlaceholder;
+            document.getElementById("label-or-share").textContent = dict.labelOrShare;
+            document.getElementById("label-other-worry").innerHTML = `<span class="w-2 h-2 rounded-full bg-amber-gold"></span> ${dict.labelOtherWorry}`;
+            document.getElementById("selected-badge").textContent = dict.selectedBadge;
+            document.getElementById("custom-worry").placeholder = dict.customWorryPlaceholder;
+            document.getElementById("btn-receive-guidance").textContent = dict.btnReceiveGuidance;
+            document.getElementById("footer-quote").textContent = dict.footerQuote;
+
+            // Modal Overlays
+            document.getElementById("loading-title").textContent = dict.loadingTitle;
+            document.getElementById("loading-sub").textContent = dict.loadingSub;
+            
+            document.getElementById("breath-modal-subtitle").textContent = dict.breathModalSubtitle;
+            document.getElementById("breath-modal-title").textContent = dict.breathModalTitle;
+            document.getElementById("breath-modal-desc").textContent = dict.breathModalDesc;
+            document.getElementById("breath-timer-sub").textContent = dict.breathTimerSub;
+            
+            if(!breathingActive) {
+                document.getElementById("breath-instruction").textContent = dict.breathReady;
+                document.getElementById("breath-control-btn").textContent = dict.btnBreathStart;
+            } else {
+                document.getElementById("breath-control-btn").textContent = dict.btnBreathPause;
+            }
+
+            // Update visible Daily Quote
+            updateDailyQuoteDisplay();
+        }
+
+        // --- RENDER 20 STUDENT CHALLENGES ---
+        function renderChallengeButtons(list) {
+            const grid = document.getElementById("challenges-grid");
+            grid.innerHTML = "";
+
+            if (list.length === 0) {
+                grid.innerHTML = `<p class="col-span-full text-center text-xs text-cream-muted/70 py-4 font-serif italic">${I18N[currentLang].fallbackNoMatch}</p>`;
+                return;
+            }
+
+            list.forEach((item) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "mood-chip text-left px-3.5 py-2.5 rounded-xl bg-espresso-deep/65 border border-sand-border/45 text-xs sm:text-[13px] text-cream-text/95 flex items-center justify-between gap-2";
+                btn.setAttribute("data-id", item.id);
+                btn.innerHTML = `
+                    <span>${item[currentLang]}</span>
+                    <span class="text-amber-gold/70 text-xs shrink-0">→</span>
+                `;
+                btn.onclick = () => selectStudentChallenge(item, btn);
+                grid.appendChild(btn);
+            });
+        }
+
+        // Filter 20 challenges smoothly
+        function filterChallenges(query) {
+            const q = query.toLowerCase().trim();
+            const filtered = STUDENT_CHALLENGES.filter(c => c[currentLang].toLowerCase().includes(q));
+            renderChallengeButtons(filtered);
+            
+            if (selectedWorryId) {
+                const currentBtn = document.querySelector(`[data-id="${selectedWorryId}"]`);
+                if (currentBtn) currentBtn.classList.add("selected");
+            }
+        }
+
+        // Select one preset & shift panoramic mood lighting
+        function selectStudentChallenge(item, btnElement) {
+            selectedWorryId = item.id;
+            document.getElementById("custom-worry").value = ""; // Clear text area
+
+            // Update visual selected chip state
+            document.querySelectorAll(".mood-chip").forEach(el => el.classList.remove("selected"));
+            if (btnElement) btnElement.classList.add("selected");
+
+            const badge = document.getElementById("selected-badge");
+            badge.classList.remove("hidden");
+
+            // Apply subtle mood-responsive background palette
+            applyMoodAtmosphere(item.mood);
+
+            // Trigger Buddhist Guidance passing the translated text and the raw ID
+            requestBuddhistWisdom(item[currentLang], item.id);
+        }
+
+        // Submit custom user worry
+        function submitCustomWorry() {
+            const customText = document.getElementById("custom-worry").value.trim();
+            if (!customText) {
+                const area = document.getElementById("custom-worry");
+                area.classList.add("ring-2", "ring-amber-gold");
+                area.focus();
+                setTimeout(() => area.classList.remove("ring-2", "ring-amber-gold"), 900);
+                return;
+            }
+
+            document.querySelectorAll(".mood-chip").forEach(el => el.classList.remove("selected"));
+            document.getElementById("selected-badge").classList.add("hidden");
+            selectedWorryId = "custom";
+            applyMoodAtmosphere("warmth");
+            requestBuddhistWisdom(customText, "custom");
+        }
+
+        // Shift panoramic SVG sky & mountain palette subtly based on emotion
+        function applyMoodAtmosphere(mood) {
+            document.body.classList.remove("mood-warmth", "mood-twilight", "mood-sage");
+            if (mood === "warmth") document.body.classList.add("mood-warmth");
+            if (mood === "twilight") document.body.classList.add("mood-twilight");
+            if (mood === "sage") document.body.classList.add("mood-sage");
+        }
+
+        // Request Personalized Buddhist Wisdom (Gemini API + Graceful Offline/No-Key Fallback)
+        async function requestBuddhistWisdom(worryText, worryId) {
+            const loading = document.getElementById("loading-overlay");
+            loading.classList.remove("hidden");
+
+            try {
+                const activeKey = getActiveApiKey();
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeKey}`;
+
+                const langString = currentLang === 'en' ? 'English' : 'Traditional Chinese (繁體中文)';
+
+                const systemInstruction = `You are a deeply compassionate and wise Buddhist companion.
+Follow these strict rules to structure your response EXACTLY into THREE distinct paragraphs:
+
+Paragraph 1: Acknowledgement and Understanding.
+Begin by warmly acknowledging the user's specific feelings or difficulties. Make them feel deeply understood, validated, and reassured that it is entirely okay to feel this way. Do not judge, and avoid sounding overly formal.
+
+Paragraph 2: Buddhist Perspective and Philosophy.
+Explain how Buddhist philosophy, teachings, or values relate to their situation (e.g., impermanence, attachment, letting go, compassion). Draw from relevant Buddhist traditions (Sakya, Kagyu, Nyingma, Gelug, or broader traditions), with a slight preference for Sakya wisdom. Explain this in simple, relatable language without overwhelming jargon. You MUST include an authentic, accurately attributed quotation from a recognized Buddhist scholar or master here.
+
+Paragraph 3: Practical Guidance.
+End with a short, practical, and gentle suggestion that the user can apply in their daily life. This could be a small mindfulness exercise, a shift in perspective, or a simple action to help them navigate their situation today.
+
+Length & Language: Maintain a warm, reassuring tone. The total length MUST be concise, around 250 to 300 words. Your entire response MUST be written fluently in ${langString}.`;
+
+                const userPrompt = `The user is struggling with: "${worryText}". Please provide your 3-paragraph guidance in ${langString}.`;
+
+                const response = await fetch(apiUrl, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: userPrompt }] }],
+                        systemInstruction: { parts: [{ text: systemInstruction }] }
+                    })
+                });
+
+                if (!response.ok) throw new Error("API request failed");
+
+                const data = await response.json();
+                const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (!rawText) throw new Error("Empty response");
+
+                // Convert markdown formatting cleanly into paragraphs
+                const paragraphs = rawText
+                    .split(/\n\s*\n/)
+                    .filter(p => p.trim().length > 0)
+                    .map(p => `<p>${p.replace(/\*\*(.*?)\*\*/g, '<strong class="text-amber-soft">$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>')}</p>`)
+                    .join("");
+
+                const defaultMicroPractice = currentLang === 'zh' 
+                    ? "暫停一下，緩慢地深呼吸三次。放鬆你的肩膀，請記住，你不需要一次承載所有的重量。" 
+                    : "Pause for three slow breaths, soften your shoulders, and remember you do not have to carry everything at once.";
+
+                loading.classList.add("hidden");
+                openAdviceModal(
+                    worryText,
+                    paragraphs,
+                    defaultMicroPractice,
+                    I18N[currentLang].buddhistReflectionSubtitle
+                );
+            } catch (err) {
+                console.warn("Using fallback wisdom:", err);
+                loading.classList.add("hidden");
+                const fallbackSource = FALLBACK_WISDOM[worryId] || FALLBACK_WISDOM["default"];
+                const fallbackContent = fallbackSource[currentLang];
+                openAdviceModal(worryText, fallbackContent.text, fallbackContent.practice, I18N[currentLang].buddhistReflectionSubtitle);
+            }
+        }
+
+        // Open & Close Personalized Advice Modal
+        function openAdviceModal(topic, htmlBody, microPractice, subtitle) {
+            document.getElementById("modal-subtitle").textContent = subtitle;
+            document.getElementById("modal-topic-title").textContent = topic;
+            document.getElementById("advice-content").innerHTML = htmlBody;
+            document.getElementById("micro-practice-text").innerHTML = `<strong class="text-amber-soft font-medium">${I18N[currentLang].microPracticePrefix}</strong> ${microPractice}`;
+
+            const modal = document.getElementById("advice-modal");
+            const panel = document.getElementById("advice-panel");
+            modal.classList.remove("hidden");
+
+            requestAnimationFrame(() => {
+                panel.classList.remove("scale-95", "opacity-0");
+                panel.classList.add("scale-100", "opacity-100");
+            });
+        }
+
+        function closeAdviceModal() {
+            const modal = document.getElementById("advice-modal");
+            const panel = document.getElementById("advice-panel");
+            panel.classList.remove("scale-100", "opacity-100");
+            panel.classList.add("scale-95", "opacity-0");
+
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 280);
+        }
+
+        // Instant "Receive a Quiet Blessing" button
+        function revealQuietBlessing() {
+            const randomBlessing = QUIET_BLESSINGS[Math.floor(Math.random() * QUIET_BLESSINGS.length)][currentLang];
+            openAdviceModal(randomBlessing.title, randomBlessing.body, randomBlessing.practice, I18N[currentLang].blessingSubtitle);
+        }
+
+        // Cycle Daily Buddhist Proverb
+        function cycleDailyQuote() {
+            currentQuoteIndex = (currentQuoteIndex + 1) % DAILY_REFLECTIONS.length;
+            const textEl = document.getElementById("daily-quote-text");
+            const authorEl = document.getElementById("daily-quote-author");
+
+            textEl.style.opacity = 0;
+            authorEl.style.opacity = 0;
+            setTimeout(() => {
+                updateDailyQuoteDisplay();
+                textEl.style.opacity = 1;
+                authorEl.style.opacity = 1;
+            }, 220);
+        }
+
+        function updateDailyQuoteDisplay() {
+            const quoteObj = DAILY_REFLECTIONS[currentQuoteIndex][currentLang];
+            document.getElementById("daily-quote-text").textContent = quoteObj.text;
+            document.getElementById("daily-quote-author").textContent = quoteObj.author;
+        }
+
+        // Gratitude Anchor Input
+        function anchorGratitude() {
+            const input = document.getElementById("gratitude-input");
+            const display = document.getElementById("gratitude-display");
+            const val = input.value.trim();
+            if (!val) return;
+
+            // Save raw value in a hidden input so we can re-render during translation toggle
+            display.innerHTML = `
+                <input type="hidden" id="gratitude-input-val" value="${val.replace(/"/g, '&quot;')}">
+                <span class="text-amber-soft">${I18N[currentLang].anchoredPrefix}</span> 
+                <span class="ml-1 text-cream-text">“${val.replace(/</g, "&lt;")}”</span>`;
+            input.value = "";
+        }
+
+        // =========================================================================
+        // 2. FLOATING LOTUS PETALS & BODHI LEAVES GENERATOR + MOTION TOGGLE
+        // =========================================================================
+        function createFloatingPetals() {
+            const container = document.getElementById("petals-container");
+            const count = 14; 
+
+            for (let i = 0; i < count; i++) {
+                const wrapper = document.createElement("div");
+                wrapper.className = "petal-particle";
+
+                const leftPos = Math.random() * 100;
+                const duration = 18 + Math.random() * 18; 
+                const delay = -(Math.random() * 25);
+                const size = 12 + Math.random() * 10;
+                const maxOpacity = (0.22 + Math.random() * 0.25).toFixed(2);
+
+                wrapper.style.left = `${leftPos}vw`;
+                wrapper.style.animationDuration = `${duration}s`;
+                wrapper.style.animationDelay = `${delay}s`;
+                wrapper.style.setProperty("--max-opacity", maxOpacity);
+
+                if (i % 2 === 0) {
+                    wrapper.innerHTML = `
+                        <svg width="${size}" height="${size * 1.3}" viewBox="0 0 20 26" fill="none">
+                            <path d="M10 1 C4 8 3 17 10 25 C17 17 16 8 10 1 Z" fill="#e8be84" fill-opacity="0.65"/>
+                        </svg>`;
+                } else {
+                    wrapper.innerHTML = `
+                        <svg width="${size}" height="${size * 1.3}" viewBox="0 0 20 26" fill="none">
+                            <path d="M10 2 C3 7 3 15 10 21 C10 23 10 25 10 25 C10 25 10 23 10 21 C17 15 17 7 10 2 Z" fill="#c98e52" fill-opacity="0.55"/>
+                        </svg>`;
+                }
+
+                container.appendChild(wrapper);
+            }
+        }
+
+        function toggleCalmMotion() {
+            calmMotionEnabled = !calmMotionEnabled;
+            document.body.classList.toggle("motion-paused", !calmMotionEnabled);
+            
+            const dot = document.getElementById("motion-dot");
+            const label = document.getElementById("motion-label");
+
+            if (calmMotionEnabled) {
+                dot.classList.remove("bg-cream-muted/40");
+                dot.classList.add("bg-amber-gold");
+                label.textContent = I18N[currentLang].motionOn;
+            } else {
+                dot.classList.remove("bg-amber-gold");
+                dot.classList.add("bg-cream-muted/40");
+                label.textContent = I18N[currentLang].motionOff;
+            }
+        }
+
+        function toggleLamp() {
+            lampLit = !lampLit;
+            const lampText = document.getElementById("lamp-text");
+            const lampGlow = document.getElementById("lamp-glow");
+            const flame = document.getElementById("lamp-flame");
+            const halo = document.getElementById("lamp-halo");
+
+            if (lampLit) {
+                lampText.textContent = I18N[currentLang].lampLit;
+                lampText.classList.remove("text-cream-muted/50");
+                lampText.classList.add("text-cream-muted");
+                lampGlow.style.opacity = "1";
+                flame.style.opacity = "1";
+                halo.style.opacity = "0.22";
+            } else {
+                lampText.textContent = I18N[currentLang].lampUnlit;
+                lampText.classList.remove("text-cream-muted");
+                lampText.classList.add("text-cream-muted/50");
+                lampGlow.style.opacity = "0";
+                flame.style.opacity = "0";
+                halo.style.opacity = "0";
+            }
+        }
+
+        // =========================================================================
+        // 3. GUIDED BREATHING SANCTUARY
+        // =========================================================================
+        let breathingActive = false;
+        let breathingTimer = null;
+
+        function openBreathingModal() {
+            document.getElementById("breathing-modal").classList.remove("hidden");
+        }
+
+        function closeBreathingModal() {
+            stopBreathingCycle();
+            document.getElementById("breathing-modal").classList.add("hidden");
+        }
+
+        function toggleBreathingCycle() {
+            if (breathingActive) stopBreathingCycle();
+            else startBreathingCycle();
+        }
+
+        function startBreathingCycle() {
+            breathingActive = true;
+            document.getElementById("breath-control-btn").textContent = I18N[currentLang].btnBreathPause;
+            runBreathPhase();
+        }
+
+        function stopBreathingCycle() {
+            breathingActive = false;
+            clearTimeout(breathingTimer);
+            const orb = document.getElementById("breath-orb");
+            orb.classList.remove("inhale", "hold", "exhale");
+            document.getElementById("breath-instruction").textContent = I18N[currentLang].breathReady;
+            document.getElementById("breath-control-btn").textContent = I18N[currentLang].btnBreathStart;
+        }
+
+        function runBreathPhase() {
+            if (!breathingActive) return;
+            const orb = document.getElementById("breath-orb");
+            const instruction = document.getElementById("breath-instruction");
+
+            orb.classList.remove("hold", "exhale");
+            orb.classList.add("inhale");
+            instruction.textContent = I18N[currentLang].breathInhale;
+
+            breathingTimer = setTimeout(() => {
+                if (!breathingActive) return;
+                orb.classList.remove("inhale");
+                orb.classList.add("hold");
+                instruction.textContent = I18N[currentLang].breathHold;
+
+                breathingTimer = setTimeout(() => {
+                    if (!breathingActive) return;
+                    orb.classList.remove("hold");
+                    orb.classList.add("exhale");
+                    instruction.textContent = I18N[currentLang].breathExhale;
+
+                    breathingTimer = setTimeout(() => {
+                        if (breathingActive) runBreathPhase();
+                    }, 6000);
+                }, 4000);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
